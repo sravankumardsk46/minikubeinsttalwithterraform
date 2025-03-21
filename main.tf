@@ -1,7 +1,7 @@
 resource "aws_instance" "minikube" {
   ami           = var.ami_id
   instance_type = var.instance_type
-  key_name      = var.key_name
+  key_name      = local.key_name
 
   security_groups = [aws_security_group.minikube_sg.name]
 
